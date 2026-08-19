@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Trial Sender — 30 Days Trial Detect</title>
+    <!-- Netflix-red "N" favicon (inline SVG, walang external file) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23e50914'>N</text></svg>">
+    <!-- CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <!-- Mac-style window dots -->
+        <div class="window-controls">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="window-title">net.py — 30 Days Trial Detect</span>
+        </div>
+
+        <!-- Header -->
+        <h2>Netflix <span class="highlight">Trial</span> Sender</h2>
+        <p class="subtitle">Web UI na konektado sa <code>server.py</code> (ang <code>net.py</code> logic) &mdash; i-run ang <code>python server.py</code>.</p>
+
+        <!-- Form -->
+        <div class="form-group">
+            <label for="emailInput">EMAIL ADDRESS</label>
+            <input type="email" id="emailInput" placeholder="you@example.com" autocomplete="off" spellcheck="false">
+        </div>
+
+        <div class="form-group" id="nfvdidGroup" style="display:none;">
+            <label for="nfvdidInput">CUSTOM NFVDID <span class="label-hint">(optional override)</span></label>
+            <input type="text" id="nfvdidInput" placeholder="Paste custom nfvdid here..." autocomplete="off" spellcheck="false">
+        </div>
+
+        <button class="send-btn" id="startBtn">Send Trial</button>
+
+        <!-- Console: ito yung output panel na replica ng net.py -->
+        <div class="console-wrap">
+            <div class="console-bar">
+                <span class="console-label">OUTPUT</span>
+                <span class="clear-btn" id="clearBtn">clear</span>
+            </div>
+            <div class="console" id="console" aria-live="polite"></div>
+        </div>
+
+        <!-- Footer / status -->
+        <div class="footer-row">
+            <div class="cookie-editor">
+                <span class="status-dot" id="statusDot"></span>
+                <span id="statusText">Idle</span>
+            </div>
+            <div class="inject-link" id="injectBtn">&#128279; inject nfvdid</div>
+        </div>
+
+        <div class="credit">Created by <span class="highlight">Lyco</span> &middot; HTML/CSS/JS + Python (server.py)</div>
+    </div>
+
+    <!-- JS file (nasa pinaka-ibaba para ma-load muna ang HTML) -->
+    <script src="script.js"></script>
+</body>
+</html>
